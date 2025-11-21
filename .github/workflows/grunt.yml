@@ -22,9 +22,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    # vital: installs local grunt from package.json
     - name: Install dependencies
       run: npm ci
 
+    # Optional: Only needed if you run grunt directly, 
+    # but usually 'npx grunt' or 'npm test' is better.
     - name: Install Grunt CLI
       run: npm install -g grunt-cli
 
