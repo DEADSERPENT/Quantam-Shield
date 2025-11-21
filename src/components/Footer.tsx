@@ -1,0 +1,250 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+
+const Footer: React.FC = () => {
+  const productLinks = [
+    { label: 'Overview', href: '/product' },
+    { label: 'Product Design', href: '/product-design' },
+    { label: 'Features', href: '/features' },
+    { label: 'Technology', href: '/technology' },
+    { label: 'Security', href: '/security' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Enterprise', href: '/enterprise' },
+  ];
+
+  const resourceLinks = [
+    { label: 'Documentation', href: '/documentation' },
+    { label: 'API Reference', href: '/api-reference' },
+    { label: 'Downloads', href: '/downloads' },
+    { label: 'Blog', href: '/blog' },
+  ];
+
+  const companyLinks = [
+    { label: 'About Us', href: '/about' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Contact', href: '/contact' },
+  ];
+
+  const supportLinks = [
+    { label: 'Help Center', href: '/help' },
+    { label: 'Getting Started', href: '/getting-started' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Community', href: '/community' },
+  ];
+
+  const legalLinks = [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+  ];
+
+  const socialLinks = [
+    {
+      name: 'Twitter',
+      href: 'https://twitter.com/quantumshield',
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'LinkedIn',
+      href: 'https://linkedin.com/company/quantumshield',
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'GitHub',
+      href: 'https://github.com/quantumshield',
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+        </svg>
+      ),
+    },
+    {
+      name: 'YouTube',
+      href: 'https://youtube.com/@quantumshield',
+      icon: (
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <footer className="bg-quantum-black border-t border-glass-border pt-16 pb-8 px-4">
+      <div className="container mx-auto">
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-2 lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-4 group">
+              <div className="relative w-10 h-10">
+                {/* Animated glow background */}
+                <div className="absolute inset-0 rounded-lg bg-quantum-cyan/20 blur-xl group-hover:bg-quantum-cyan/40 transition-all" />
+
+                {/* Logo SVG - Quantum Shield */}
+                <svg viewBox="0 0 40 40" className="relative z-10 w-10 h-10" fill="none">
+                  <defs>
+                    <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#00ffff" />
+                      <stop offset="50%" stopColor="#8b5cf6" />
+                      <stop offset="100%" stopColor="#00ffff" />
+                    </linearGradient>
+                    <filter id="footerLogoGlow">
+                      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                      <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  {/* Shield outline */}
+                  <path
+                    d="M20 4 L32 8 L32 18 Q32 28 20 36 Q8 28 8 18 L8 8 Z"
+                    stroke="url(#footerLogoGrad)"
+                    strokeWidth="1.5"
+                    fill="none"
+                    className="group-hover:stroke-[2] transition-all"
+                    filter="url(#footerLogoGlow)"
+                  />
+
+                  {/* Inner quantum lock */}
+                  <circle cx="20" cy="18" r="4" stroke="url(#footerLogoGrad)" strokeWidth="1.5" fill="none" />
+                  <rect x="16" y="20" width="8" height="8" rx="1" stroke="url(#footerLogoGrad)" strokeWidth="1.5" fill="none" />
+
+                  {/* Quantum particles */}
+                  <circle cx="14" cy="12" r="1" fill="#00ffff" className="animate-pulse" />
+                  <circle cx="26" cy="12" r="1" fill="#8b5cf6" className="animate-pulse" style={{ animationDelay: '0.3s' }} />
+                  <circle cx="20" cy="30" r="1" fill="#00ffff" className="animate-pulse" style={{ animationDelay: '0.6s' }} />
+                </svg>
+              </div>
+              <span className="text-2xl font-display font-bold gradient-text">
+                QuantumShield
+              </span>
+            </Link>
+            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+              The world&apos;s first quantum-safe security key. Protecting your data from future threats, today.
+            </p>
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-glass-card border border-glass-border flex items-center justify-center text-gray-400 hover:text-quantum-cyan hover:border-quantum-cyan/50 hover:bg-quantum-cyan/5 transition-all duration-300 group"
+                  aria-label={social.name}
+                >
+                  <span className="transform group-hover:scale-110 transition-transform">
+                    {social.icon}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Product */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-4">Product</h4>
+            <ul className="space-y-2">
+              {productLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-gray-500 hover:text-quantum-cyan transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-4">Resources</h4>
+            <ul className="space-y-2">
+              {resourceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-gray-500 hover:text-quantum-cyan transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
+            <ul className="space-y-2">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-gray-500 hover:text-quantum-cyan transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-4">Support</h4>
+            <ul className="space-y-2">
+              {supportLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-gray-500 hover:text-quantum-cyan transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-glass-border">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+              <div className="text-sm text-gray-500">
+                © {new Date().getFullYear()} QuantumShield. All rights reserved.
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-center gap-6">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-gray-500 hover:text-quantum-cyan transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href="/security"
+                className="text-sm text-gray-500 hover:text-quantum-cyan transition-colors"
+              >
+                Security
+              </a>
+            </div>
+          </div>
+          {/* Additional Info */}
+          <div className="mt-6 pt-6 border-t border-glass-border/50 text-center">
+            <p className="text-xs text-gray-600">
+              QuantumShield™ is a registered trademark. Quantum-safe cryptography powered by NIST-approved ML-KEM and ML-DSA algorithms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
